@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "GeoFire"
-  s.version      = "5.0"
+  s.version      = "5.0.1"
   s.summary      = "Realtime location queries with Firebase."
   s.homepage     = "https://github.com/firebase/geofire-objc"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
@@ -9,9 +9,10 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
   s.requires_arc = true
   s.default_subspec = 'Database'
+  s.swift_version = "5.0"
 
   s.subspec 'Database' do |db|
-    db.ios.dependency 'Firebase/Database', '> 7.0.0', '< 12.0.0'
+    db.ios.dependency 'Firebase/Database'
     db.ios.dependency 'GeoFire/Utils'
     db.public_header_files = "GeoFire/API/*"
     db.source_files = ["GeoFire/Implementation/*", "GeoFire/API/*"]
